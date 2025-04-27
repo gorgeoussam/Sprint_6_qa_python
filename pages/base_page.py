@@ -6,6 +6,9 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
+    def open_page(self, url):
+        self.driver.get(url)
+
     def find_element(self, locator):
         return WebDriverWait(self.driver, 10).until(
             expected_conditions.presence_of_element_located(locator)
